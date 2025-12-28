@@ -1,45 +1,67 @@
-*{
+/* Container Externo (Barra inteira) */
+.header_nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Alinha o conteúdo interno ao centro horizontalmente */
+    align-items: center;     /* Alinha ao centro verticalmente */
+    width: 100%;
+    height: 88px;
+    background: linear-gradient(
+        to bottom,
+        rgba(15,16,20,0.9),
+        rgba(15,16,20,0.6)
+    );
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+/* Container Interno (Limita a largura e centraliza) */
+.nav_content {
+    display: flex;
+    justify-content: center; /* Garante que os links fiquem no meio */
     align-items: center;
     width: 100%;
-    height: 88px; 
-   
-    background: linear-gradient(
-    to bottom,
-    rgba(15,16,20,0.9),
-    rgba(15,16,20,0.6)
-  );
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-.container_nav_card{
-    justify-content: center;
-    justify-content: space-around;
+    max-width: 1200px; /* Largura máxima para não espalhar demais em monitores grandes */
 }
 
+.container_nav_card ul {
+    display: flex; 
+    list-style: none;
+    gap: 15px; /* Espaço entre texto e pontos */
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
 
-
-.container_nav_card  > ul > li > a {
-    
+/* Estilo para links e separadores */
+.container_nav_card ul li,
+.container_nav_card ul li a {
     text-decoration: none;
     color: #ffffff;
-   
-
+    font-size: 1rem;
+    transition: 0.3s;
 }
 
-.container_nav_card  > ul > li > a:hover {
-    
+.separator {
+    color: #6366f1; /* Cor personalizada para o ponto */
+}
+
+.container_nav_card ul li a:hover {
     color: #6366f1;
-
 }
 
-
+/* --- RESPONSIVIDADE --- */
 @media screen and (max-width: 700px) {
-
-    .container_nav_card {
-        margin-left: 40px;
+    .header_nav {
+        height: auto;
+        padding: 20px 0;
     }
 
-
+    .container_nav_card ul {
+        gap: 10px;
+        flex-wrap: wrap; /* Permite quebrar linha se o celular for muito pequeno */
+        justify-content: center;
+    }
 }

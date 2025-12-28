@@ -1,55 +1,78 @@
-*{color: azure;}
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Essencial para não quebrar largura */
+    color: azure;
+}
 
-h1{
+h1 {
     color: #EDEDED;
+    font-size: 2.5rem;
 }
 
-h2> span{
+h2 > span {
     color: #6366f1;
-
 }
 
-.role {
-  transition: opacity 0.3s ease;
-}
-
-
-p {
-    color: #B3B3B3;
-}
-
-
-.card__header{
+/* Container principal */
+.card__header {
+  margin-top: 5vh;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre texto e imagem */
+    width: 100%;
+}
+
+.card__info {
+    flex: 1; /* Faz o texto ocupar o espaço que sobrar */
 }
 
 .card__tecs img {
-  margin-top: 30px;
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%; 
-  border: 2px solid rgba(255,255,255,0.15);
-  filter: grayscale(100%);
-  transition: all 0.3s ease;
+    margin-top: 30px;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%; 
+    border: 2px solid rgba(255,255,255,0.15);
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* IMPEDE a imagem de amassar ou sumir */
 }
 
-.card__tecs img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.03);
+/* --- RESPONSIVIDADE (Mantendo o Flex Lado a Lado) --- */
+@media screen and (max-width: 700px) {
+    .card__header {
+        gap: 10px; /* Diminui o buraco entre eles no celular */
+    }
+
+    /* Reduzimos o tamanho para que ambos caibam na mesma linha */
+    .card__tecs img {
+        width: 110px; 
+        height: 110px;
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Nome menor para caber ao lado da foto */
+    }
+
+    .card__info {
+        margin-bottom: 30px; /* Reduz margem que estava em 100px */
+    }
 }
 
-.card__info{
-  margin-bottom: 100px;
-}
-
+/* Resto do seu código */
 .role {
-  display: inline-block;
-  opacity: 1;
-  transition: opacity 0.4s ease;
+    display: inline-block;
+    transition: opacity 0.4s ease;
 }
 
 .role.hidden {
-  opacity: 0;
+    opacity: 0;
+}
+
+p {
+    color: #B3B3B3;
 }
