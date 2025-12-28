@@ -29,8 +29,7 @@
     border-radius: 10px 5px 10px 5px;
     box-shadow: 0 0 10px #6366f1;
     background-color: #12131A;
-    transition: all 0.3s ease; /* Transição para transform e box-shadow */
-    
+    transition: all 0.3s ease; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,6 +55,15 @@
 }
 
 
+.projects_cards p {
+    text-decoration: none;
+    color: #fff;
+}
+
+.cards_pjt{
+    align-items: center;
+}
+
 .projects_cards:hover {
     transform: scale(0.95);
     background-color: #1a1b26; 
@@ -78,14 +86,36 @@
 
 @media screen and (max-width: 700px) {
     .container-projects {
-        
-        padding: 10px;
+        padding: 5px; 
+    }
+
+    .cont_card {
+        gap: 8px; 
+        justify-content: center;
     }
 
     .projects_cards {
-        width: 100%; 
-        max-width: 200px; 
-        height: auto; 
-       
+        /* Cálculo para 3 colunas: (100% / 3) menos o desconto dos gaps */
+        width: calc(33.33% - 12px); 
+        min-width: 100px; /* Largura mínima para não quebrar o layout */
+        
+        min-height: 160px; /* Altura reduzida para manter a proporção */
+        padding: 10px 5px; /* Padding interno bem pequeno */
+        border-width: 1px; /* Borda mais fina para não ocupar espaço visual */
+    }
+
+    .projects_cards img {
+        width: 40px;  /* Imagem pequena */
+        height: 40px;
+        margin-bottom: 8px;
+    }
+
+    .projects_cards a h2 {
+        font-size: 0.75rem; /* Fonte pequena para caber o título */
+        line-height: 1.1;
+    }
+
+    .projects_cards a p {
+        display: none; /* Dica: Esconda a descrição no mobile 3 colunas para não poluir */
     }
 }
