@@ -116,6 +116,6 @@
     }
 
     .projects_cards a p {
-        display: none; /* Dica: Esconda a descrição no mobile 3 colunas para não poluir */
+       
     }
 }
