@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my_selfie';
+
+  ngOnInit() {
+   
+    AOS.init({
+      duration: 1000, 
+      once: true,    
+    });
+  }
+
 }

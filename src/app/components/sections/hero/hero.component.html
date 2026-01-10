@@ -1,38 +1,29 @@
-    <div class="text_card">
+<div class="text_card" data-aos="fade-in" data-aos-duration="1200">
 
-        <div class="card__header">
-
-            <div class="header_txt">
-                <h1>Desireê Costa</h1>
-                <h1>Software Developer</h1>
-                <h2 class="role"[class.hidden]= ><span> {{ textoAtual }}</span></h2>
-                <br>
-            </div>
-
-            <div class="card__tecs">
-                <img src="/assets/image.png" alt="" srcset="">
-            </div>
-
-        </div>
-
-        <div class="card__info">
-
-
-                <p>
-                Graduanda em Análise e Desenvolvimento de Sistemas e técnica em Informática (IFPB). <br>
-
-                Desenvolvimento fullstack com foco em Angular, Java e fundamentos sólidos de programação. <br>
-            </p>
+    <div class="card__header">
+        <div class="header_txt" data-aos="fade-right" data-aos-delay="200">
+            <h1>Desireê Costa</h1>
+            <h1>Software Developer</h1>
+            <h2 class="role"><span> {{ textoAtual }}</span></h2>
             <br>
-            
-
-            <p>Estagiária em TI • Projetos fullstack • Escrita técnica </p>
-
-        
-            
         </div>
 
-        <app-projects-card></app-projects-card>
-        
+        <div class="card__tecs" data-aos="fade-left" data-aos-delay="400">
+            <img src="/assets/image.png" alt="Tecnologias" srcset="">
+        </div>
+    </div>
 
-     </div>
+    <div class="card__info" data-aos="zoom-in-up" data-aos-delay="600">
+        <p>
+            Graduanda em Análise e Desenvolvimento de Sistemas e técnica em Informática (IFPB). <br>
+            Desenvolvimento fullstack e fundamentos sólidos de programação. <br>
+        </p>
+        <br>
+        <p>Estagiária em TI • Projetos fullstack • Escrita técnica </p>
+    </div>
+
+
+    
+    <app-projects-card data-aos="fade-up" data-aos-delay="800"></app-projects-card>
+
+</div>

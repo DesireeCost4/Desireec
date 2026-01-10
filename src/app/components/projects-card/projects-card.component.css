@@ -25,20 +25,48 @@
     padding: 20px;
     width: 200px; 
     min-height: 250px;
-    border: 2px solid #6366f1;
-    border-radius: 10px 5px 10px 5px;
-    box-shadow: 0 0 10px #6366f1;
-    background-color: #12131A;
-    transition: all 0.3s ease; 
+    /* Borda suave usando o Indigo principal */
+    border: 1px solid rgba(99, 102, 241, 0.4); 
+    border-radius: 12px;
+    
+    /* Fundo semi-transparente para o efeito bruxo/nebulosa */
+    background: rgba(16, 16, 26, 0.6); 
+    backdrop-filter: blur(10px);
+    
+    /* Sombra inicial suave (coerente com a foto) */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 
+                0 0 15px rgba(99, 102, 241, 0.1);
+    
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     cursor: pointer;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3), 
+                0 0 15px rgba(99, 102, 241, 0.2);
+  }
+  50% {
+    transform: translateY(-20px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 
+                0 0 35px rgba(99, 102, 241, 0.4);
+  }
 }
 
 .projects_cards:hover {
-    transform: scale(0.95);
+    animation-play-state: paused; 
+    
+    transform: translateY(-30px) scale(1.05); 
+    
+    border-color: #8b5cf6; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                0 0 30px rgba(139, 92, 246, 0.6); 
 }
 
 
@@ -70,7 +98,7 @@
 }
 
 .projects_cards:active {
-    box-shadow: 0 0 15px #3e32eb; 
+    box-shadow: 0 0 15px  #8b5cf6; ; 
     transform: scale(0.92);
 }
 
