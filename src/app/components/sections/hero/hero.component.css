@@ -77,6 +77,40 @@ h2 > span {
     }
 }
 
+
+.role span {
+    color: rgba(99, 102, 241, 0.7); 
+    
+    background: linear-gradient(
+        to right, 
+        #6366f1 0%, 
+        #8b5cf6 25%, 
+        #ffffff 50%, 
+        #8b5cf6 75%, 
+        #6366f1 100%
+    );
+    
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Animação que corre o brilho */
+    animation: marvelShimmer 8s linear infinite;
+    
+    text-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+    display: inline-block;
+}
+
+@keyframes marvelShimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+
 /* Resto do seu código */
 .role {
     display: inline-block;
